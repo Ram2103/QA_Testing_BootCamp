@@ -18,7 +18,7 @@ public class Login_Checkout {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://localhost:3000/");
+        driver.get("http://juice-shop:3000/");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@class='mat-focus-indicator close-dialog mat-raised-button mat-button-base mat-primary ng-star-inserted']")).click();
     }
