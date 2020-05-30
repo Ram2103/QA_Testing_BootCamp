@@ -28,7 +28,7 @@ public class Login_Checkout {
         driver.findElement(By.id("navbarAccount")).click();
         driver.findElement(By.id("navbarLoginButton")).click();
         driver.findElement(By.id("newCustomerLink")).click();
-        driver.findElement(By.id("emailControl")).sendKeys("ramanathan1@gmail.com");
+        driver.findElement(By.id("emailControl")).sendKeys("ram123456@gmail.com");
         driver.findElement(By.id("passwordControl")).sendKeys("abcdefg");
         driver.findElement(By.id("repeatPasswordControl")).sendKeys("abcdefg");
         driver.findElement(By.name("securityQuestion")).click();
