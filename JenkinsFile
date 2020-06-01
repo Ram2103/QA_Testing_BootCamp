@@ -7,8 +7,10 @@ pipeline {
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Ram2103/QA_Testing_BootCamp.git']]])
          }
       }
-
-      stage('Maven installation') {
+tools {
+    maven 'M4'
+  }
+      stage('Build') {
          steps {
              sh 'mvn clean test'
         }
