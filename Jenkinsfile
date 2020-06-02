@@ -1,7 +1,7 @@
 pipeline {
    agent any
     environment {
-       BROWSER = 'REMOTE'
+       Browser = 'REMOTE'
     }
    stages {
       stage('checkout') {
