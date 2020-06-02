@@ -1,11 +1,23 @@
 package JuiceShop;
 
+import DesignPattern.BrowserFactory;
+import DesignPattern.BrowserInterface;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonFunc {
-    WebDriverWait wait = new WebDriverWait(BrowserUtils.getInstance().driver, 10);
+    public WebDriver driver;
+    WebDriverWait wait = null;
+    public void launchBrowser(){
+        String browser = System.getenv("Browser");
+        //String browser = "Chrome";
+        BrowserInterface inter = new BrowserFactory().getBrowser(browser.toUpperCase());
+        driver = inter.openBrowser();
+        wait = new WebDriverWait(driver, 10);
+    }
+
 
     public void clickElement(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by)).click();
